@@ -12,8 +12,11 @@ def multiplication(a, b):
 def division(a, b):
     return a / b
 
-def squareroot(a):
+def square_root(a):
     return math.sqrt(a)
+
+def square(a):
+    return a ** 2
 
 class Calculator:
     result = 0
@@ -37,6 +40,11 @@ class Calculator:
         self.result = division(a, b)
         return self.result
 
-    def sqrt(self, a):
-        self.result = squareroot(a)
+    def sq(self, a):
+        self.result = square(a)
         return self.result
+
+    def sqrt(self, a):
+        self.result = square_root(a)
+        return self.result
+

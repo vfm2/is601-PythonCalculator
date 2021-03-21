@@ -28,6 +28,10 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.calculator.divide(28, 7), 4)
         self.assertEqual(self.calculator.result, 4)
 
+    def test_square_method_calculator(self):
+        self.assertEqual(self.calculator.sq(5), 25)
+        self.assertEqual(self.calculator.result, 25)
+
     def test_square_root_method_calculator(self):
         self.assertEqual(self.calculator.sqrt(25), 5)
         self.assertEqual(self.calculator.result, 5)

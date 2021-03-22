@@ -24,12 +24,15 @@ class MyTestCase(unittest.TestCase):
         test_data = CsvReader('src/csvFiles/UnitTestSubtraction.csv').data
         for row in test_data:
             result = float(row['Result'])
-            self.assertEqual(self.calculator.subtract(row['Value 1']), (row['Value 2']), result)
+            self.assertEqual(self.calculator.subtract(float(row['Value 2']), float(row['Value 1'])), result)
             self.assertEqual(self.calculator.result, result)
 
     def test_multiply_method_calculator(self):
-        self.assertEqual(self.calculator.multiply(3, 3), 9)
-        self.assertEqual(self.calculator.result, 9)
+        test_data = CsvReader('src/csvFiles/UnitTestMultiplication.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertEqual(self.calculator.multiply(float(row['Value 1']), float(row['Value 2'])), result)
+            self.assertEqual(self.calculator.result, result)
 
     def test_divide_method_calculator(self):
         self.assertEqual(self.calculator.divide(28, 7), 4)
